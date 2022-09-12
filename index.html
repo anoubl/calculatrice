@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page.css">
+    <title>calculatrice</title>
+</head>
+<body>
+   <div class="a">  
+    <div class="contant">
+        <input type="text " readonly id="resultat">
+        <div class="btton">
+            <input type="button" value="1" onclick="ecrirer(this.value)">
+            <input type="button" value="2" onclick="ecrirer(this.value)">
+            <input type="button" value="3" onclick="ecrirer(this.value)">
+           
+            <input type="button" value="4" onclick="ecrirer(this.value)">
+            <input type="button" value="5" onclick="ecrirer(this.value)">
+            <input type="button" value="6" onclick="ecrirer(this.value)">
+       
+            <input type="button" value="7" onclick="ecrirer(this.value)">
+            <input type="button" value="8" onclick="ecrirer(this.value)">
+            <input type="button" value="9" onclick="ecrirer(this.value)">
+          
+            <input type="button" value="+" onclick="ecrirer(this.value)" >
+            <input type="button" value="-" onclick="ecrirer(this.value)">
+            <input type="button" value="0" onclick="ecrirer(this.value)">
+           
+            <input type="button" value="*" onclick="ecrirer(this.value)" >
+            <input type="button" value="/" onclick="ecrirer(this.value)">
+            <input type="button" value="," onclick="ecrirer(this.value)">
+           
+            <input type="button" value="="  onclick="equal()">
+            <input type="button" value="C"  onclick="suprto()">
+            <input type="button" value="CE" onclick="suprtu()" >
+        </div>
+    </div>
+</div>
+
+<script>
+   var x=document.getElementById("resultat");
+   function ecrirer(c)
+    {
+        if(x.value.length<16) {
+x.value+=c; }
+
+    }
+function suprto()
+{
+    x.value="";
+}
+function equal()
+{
+    try
+    {
+        x.value=eval(x.value);
+    }
+    catch
+    {
+        x.value="ERROR";
+    }
+}
+function suprtu()
+{
+    x.value=x.value.slice(0,-1);
+}
+</script>
+</body>
+</html>
